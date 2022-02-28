@@ -578,7 +578,7 @@ class PostgresQueryGenerator extends AbstractQueryGenerator {
       values = dataType.toString().match(/^ENUM\(.+\)/)[0];
     }
     let sql = `CREATE TYPE ${enumName} AS ${values};`;
-    if (!!options && options.force === true) {
+    if (!!options && options.force === true && false) {
       sql = this.pgEnumDrop(tableName, attr) + sql;
     }
     return sql;
